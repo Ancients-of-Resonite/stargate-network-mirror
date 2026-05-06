@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
   const stargates = (
     await db
       .select({
-        ...(isAdmin ? { id: stargate.id } : {}),
+        id: stargate.id,
         ...(isAdmin ? { user_id: stargate.user_id } : {}),
         gate_address: stargate.gate_address,
         gate_code: stargate.gate_code,
